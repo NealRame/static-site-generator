@@ -1,0 +1,6 @@
+mixin menu
+	nav.menu
+		span Menu
+		ul
+			each slug, name in menu
+				li: a(href=slug)= name

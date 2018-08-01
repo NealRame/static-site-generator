@@ -1,0 +1,10 @@
+include mixins/_menu
+
+doctype html
+html
+	head
+		title= title
+	body
+		+menu
+		block content
+			!= matter
