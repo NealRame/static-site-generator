@@ -3,9 +3,10 @@ const Blender = require('../../index.js')
 
 gulp.task('default', () => {
 	const blender = Blender({
+		index: true,
 		middlewares: ['blender-menu'],
 	})
-	gulp.src(blender.sources())
+	return gulp.src(blender.sources())
 		.pipe(blender.stream())
 		.pipe(gulp.dest('build'))
 })

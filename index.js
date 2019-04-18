@@ -9,6 +9,8 @@ const {defaultTo} = require('ramda')
 module.exports = function ({
 	baseDir = process.cwd(),
 	contentsBaseDir = null,
+	index = false,
+	indexBaseDir = null,
 	layoutBaseDir = null,
 	logLevel = Logger.warn,
 	middlewares = [],
@@ -22,6 +24,7 @@ module.exports = function ({
 		contentsBaseDir: defaultTo(join(baseDir, 'contents'), contentsBaseDir),
 		layoutBaseDir: defaultTo(join(baseDir, 'layout'), layoutBaseDir),
 		log: Logger('Blender'),
+		index,
 	}
 	return {
 		use(middleware) {
@@ -41,6 +44,7 @@ module.exports = function ({
 			})
 			stream.on('error', err => {
 				state.log.error(err.toString())
+				state.log.error(err)
 			})
 			return stream
 		},
