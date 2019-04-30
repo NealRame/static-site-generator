@@ -15,3 +15,6 @@ indent_size = 2
 [{*.hbs,*.md,*.pug}]
 trim_trailing_whitespace = false
 insert_final_newline = false
+
+[.babelrc]
+	indent_size = 2
