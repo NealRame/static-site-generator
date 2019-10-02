@@ -1,5 +1,5 @@
 ---
 title: Blog
-menu: true
+nav: true
 ---
 Blog stuff

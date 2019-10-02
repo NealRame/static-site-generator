@@ -1,6 +1,6 @@
 ---
 title: Home
-menu: true
+nav: true
 ---
 # Home sweet home
 Hello, world
