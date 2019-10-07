@@ -6,7 +6,7 @@
   "scripts": {
     "test-site": "$PWD/tools/scripts/test-site.sh",
     "test-spec": "$PWD/tools/scripts/test-spec.sh",
-    "test": "$PWD/tools/scripts/test-spec.sh && ava"
+    "test": "$PWD/tools/scripts/test-spec.sh"
   },
   "author": {
     "name": "Julien Graziano",
