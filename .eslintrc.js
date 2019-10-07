@@ -20,6 +20,7 @@ module.exports = {
 		'import/no-unresolved': 0,
 		'import/prefer-default-export': 0,
 		'indent': ['error', 'tab'],
+		'object-curly-spacing': 0,
 		'operator-linebreak': ['error', 'before'],
 		'no-multi-assign': 0,
 		'no-shadow': 0,
