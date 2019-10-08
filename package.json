@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Generate static sites with gulp!",
   "main": "index.js",
+  "repository": "github:NealRame/static-site-generator",
   "scripts": {
     "test-site": "$PWD/tools/scripts/test-site.sh",
     "test-spec": "$PWD/tools/scripts/test-spec.sh",
