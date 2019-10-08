@@ -1,4 +1,4 @@
-const CreateGulpTasks = require('../../lib/gulp')
+const CreateGulpTasks = require('../../')
 const {join} = require('path')
 
 module.exports = CreateGulpTasks({
