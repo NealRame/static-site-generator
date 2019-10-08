@@ -1,7 +1,7 @@
-const CreateGulpTasks = require('../../')
+const StaticSiteGenerator = require('../..')
 const {join} = require('path')
 
-module.exports = CreateGulpTasks({
+module.exports = StaticSiteGenerator({
 	'content': {
 		index: true,
 		middlewares: ['blender-menu'],
