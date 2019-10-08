@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SITE_DIR=${SITE_DIR:-test/site}
+SITE_DIR=${SITE_DIR:-tests/site}
 SITE_TASK=${SITE_TASK:-build}
 
 source "$PWD/tools/scripts/.env"

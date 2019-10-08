@@ -54,8 +54,8 @@
   },
   "ava": {
     "files": [
-      "test/specs/**/*.js",
-      "!test/specs/content-generator/helpers/**/*"
+      "tests/specs/**/*.js",
+      "!tests/specs/content-generator/helpers/**/*"
     ]
   }
 }
