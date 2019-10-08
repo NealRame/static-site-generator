@@ -1,7 +1,7 @@
 {
   "name": "static-site-generator",
   "version": "0.0.1",
-  "description": "",
+  "description": "Generate static sites with gulp!",
   "main": "index.js",
   "scripts": {
     "test-site": "$PWD/tools/scripts/test-site.sh",
