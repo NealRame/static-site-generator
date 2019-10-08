@@ -2,7 +2,7 @@ const test = require('ava')
 
 const {identity, is, times} = require('ramda')
 const {fake, stub} = require('sinon')
-const {map} = require('../../../lib/async')
+const {map} = require('../../../lib/utils/async')
 
 test('map: should be a function', t => {
 	t.true(typeof map === 'function')

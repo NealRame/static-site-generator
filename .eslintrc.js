@@ -26,6 +26,7 @@ module.exports = {
 		'no-shadow': 0,
 		'no-tabs': 0,
 		'space-before-function-paren': 0,
+		'quote-props': 0,
 		'space-infix-ops': 0
 	}
 }

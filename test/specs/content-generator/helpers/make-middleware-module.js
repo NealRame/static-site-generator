@@ -4,7 +4,7 @@ const {randomBytes} = require('crypto')
 const {join} = require('path')
 const {tmpdir} = require('os')
 
-const {promisify} = require('../../../lib/async')
+const {promisify} = require('../../../../lib/utils/async')
 
 const middleware = `module.exports = () => files => Promise.resolve()`
 const mkdtemp = promisify(fs.mkdtemp)

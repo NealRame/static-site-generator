@@ -55,7 +55,7 @@
   "ava": {
     "files": [
       "test/specs/**/*.js",
-      "!test/specs/helpers/**/*"
+      "!test/specs/content-generator/helpers/**/*"
     ]
   }
 }

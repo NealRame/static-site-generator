@@ -2,8 +2,8 @@ const test = require('ava')
 
 const {is, times} = require('ramda')
 const {fake} = require('sinon')
-const {each} = require('../../../lib/async')
-const {noop} = require('../../../lib/functional')
+const {each} = require('../../../lib/utils/async')
+const {noop} = require('../../../lib/utils/functional')
 
 test('each: should be a function', t => {
 	t.true(typeof each === 'function')

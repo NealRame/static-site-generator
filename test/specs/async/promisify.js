@@ -1,6 +1,6 @@
 const test = require('ava')
 
-const {promisify} = require('../../../lib/async')
+const {promisify} = require('../../../lib/utils/async')
 const {spy} = require('sinon')
 
 test('promisify: should be a function', t => {

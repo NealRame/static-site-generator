@@ -4,8 +4,8 @@ const {spy, stub} = require('sinon')
 
 const State = require('../helpers/state')
 
-const {noop} = require('../../../lib/functional')
-const {_MiddlewareBuilder} = require('../../../lib/middleware')
+const {noop} = require('../../../../lib/utils/functional')
+const {_MiddlewareBuilder} = require('../../../../lib/content-generator/middleware')
 
 test('_MiddlewareBuilder should be a function', t => {
 	t.true(is(Function, _MiddlewareBuilder))

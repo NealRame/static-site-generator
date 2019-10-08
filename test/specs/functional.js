@@ -1,7 +1,7 @@
 const test = require('ava')
 const sinon = require('sinon')
 
-const functional = require('../../lib/functional')
+const functional = require('../../lib/utils/functional')
 
 test('noop', t => {
 	t.is(functional.noop(), undefined)
@@ -27,4 +27,11 @@ test('createErrorFirstCallback', t => {
 
 	fn(null, 0, 1)
 	t.truthy(resolve.calledWith(0, 1))
+})
+
+test('truthy', t => {
+	t.true(functional.truthy(true))
+	t.false(functional.truthy(false))
+	t.false(functional.truthy(null))
+	t.false(functional.truthy())
 })

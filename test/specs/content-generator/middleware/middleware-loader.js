@@ -1,9 +1,9 @@
 const test = require('ava')
-const {identical, isNil, is, where} = require('ramda')
+const {identical, is, where} = require('ramda')
 
 const State = require('../helpers/state')
 const makeMiddlewareModule = require('../helpers/make-middleware-module')
-const {_MiddlewareLoader} = require('../../../lib/middleware')
+const {_MiddlewareLoader} = require('../../../../lib/content-generator/middleware')
 
 test('_MiddlewareLoader should be a function', t => {
 	t.true(is(Function, _MiddlewareLoader))
@@ -27,16 +27,11 @@ test(`Loader should return {builder, config, name} when module 'name' has been f
 	})
 })
 
-test(`Loader should return {builder: null, config, name} when module 'name' has not been found`, async t => {
+test(`Loader should throw when module 'name' has not been found`, async t => {
 	return makeMiddlewareModule({pretend: true}).then(({dir, name}) => {
 		const state = State({middlewaresDirectories: [dir]})
 		const load = _MiddlewareLoader(state)
 		const config = {foo: 'bar'}
-		const middleware = load({name, config})
-		t.true(where({
-			builder: isNil,
-			config: identical(config),
-			name: identical(name),
-		}, middleware))
+		t.throws(() => load({name, config}), Error)
 	})
 })

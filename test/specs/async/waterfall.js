@@ -2,7 +2,7 @@ const test = require('ava')
 const {all, append, aperture, prepend, times} = require('ramda')
 const {spy} = require('sinon')
 
-const {waterfall} = require('../../../lib/async')
+const {waterfall} = require('../../../lib/utils/async')
 const {noop} = require('../../../lib/utils')
 
 test('waterfall should be a function', t => {

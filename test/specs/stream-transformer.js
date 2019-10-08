@@ -3,7 +3,7 @@ const isStream = require('is-stream')
 const {spy} = require('sinon')
 const {identity} = require('ramda')
 
-const {Transformer} = require('../../lib/stream')
+const {Transformer} = require('../../lib/utils/stream')
 
 test('Transformer should be a function', t => {
 	t.is(typeof Transformer, 'function')

@@ -1,6 +1,6 @@
 const test = require('ava')
 
-const {callbackify} = require('../../../lib/async')
+const {callbackify} = require('../../../lib/utils/async')
 
 test('callbackify: should be a function', t => {
 	t.true(typeof callbackify === 'function')

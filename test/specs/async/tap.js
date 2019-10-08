@@ -1,9 +1,9 @@
 const test = require('ava')
 
 const {is} = require('ramda')
-const {noop} = require('../../../lib/functional')
 const {fake} = require('sinon')
-const {tap} = require('../../../lib/async')
+const {noop} = require('../../../lib/utils/functional')
+const {tap} = require('../../../lib/utils/async')
 
 test('tap should be a function', t => {
 	t.true(typeof tap === 'function')

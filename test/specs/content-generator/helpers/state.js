@@ -2,7 +2,7 @@ const {join} = require('path')
 
 module.exports = function State({
 	middlewares = [],
-	middlewaresDirectories = [join('..', '..', 'lib', 'middlewares')],
+	middlewaresDirectories = [join('..', '..', '..', '..', 'lib', 'middlewares')],
 } = {}) {
 	return {
 		files: {},

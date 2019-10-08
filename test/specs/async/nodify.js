@@ -1,6 +1,6 @@
 const test = require('ava')
 
-const {nodify} = require('../../../lib/async')
+const {nodify} = require('../../../lib/utils/async')
 
 test('map: should be a function', t => {
 	t.true(typeof nodify === 'function')
