@@ -4,7 +4,7 @@ const {join} = require('path')
 module.exports = StaticSiteGenerator({
 	'content': {
 		index: true,
-		middlewares: ['blender-menu'],
+		middlewares: ['menu'],
 	},
 	'style': {
 		sourcesDir: join(__dirname, 'style'),
