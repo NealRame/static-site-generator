@@ -1,17 +1,18 @@
 const path = require('path')
 const gulp = require('gulp')
 const gulpif = require('gulp-if')
-const livereload = require('gulp-livereload')
+const {reload: livereload} = require('gulp-connect')
 
 const {all, both, either, head, ifElse, is, map, nth, pluck, pipe, uniq, where} = require('ramda')
 
 const Serve = require('./lib/gulp/serve')
+const {truthy} = require('./lib/utils/functional')
 
 // ([...dirpath]) => ([name, schemeConfig]) => [schemeName, scheme]
-// Return a scheme loader given a list of search path.
+// Return a scheme loader given a list of search folders.
 // The returned scheme loader will take a scheme name and a scheme config to
 // load and initialize a scheme.
-function SchemeLoader(paths) {
+function SchemeLoader(schemeDirectories) {
 	return pipe(
 		// schemeName:taskName => schemeName
 		([name, config]) => [
@@ -21,7 +22,7 @@ function SchemeLoader(paths) {
 		// resolve schemeName to a filepath
 		([schemeName, config]) => [
 			schemeName,
-			require.resolve(`./${schemeName}`, {paths}),
+			require.resolve(`./${schemeName}`, {paths: schemeDirectories}),
 			config,
 		],
 		// load scheme
@@ -63,14 +64,14 @@ function wrapTask(task) {
 	}
 }
 
-function SchemeBuilder({serve, paths, outputDir}) {
+function SchemeBuilder({outputDirectory, schemeDirectories, serve}) {
 	const loadScheme = pipe(
-		SchemeLoader(paths),
+		SchemeLoader(schemeDirectories),
 		checkScheme
 	)
 
 	return ([name, config]) => {
-		const scheme = loadScheme([name, {...config, outputDir}])
+		const scheme = loadScheme([name, {...config, outputDirectory}])
 
 		const clean = scheme.clean
 		const build = wrapTask(cb => {
@@ -100,14 +101,14 @@ function SchemeBuilder({serve, paths, outputDir}) {
 }
 
 function CreateGulpTasks(descriptor, {
-	outputDir = 'build',
-	paths = [],
+	outputDirectory = 'build',
+	schemeDirectories = [],
 	serve = true,
 } = {}) {
 	const buildScheme = SchemeBuilder({
-		paths: uniq([path.join(__dirname, 'lib', 'gulp'), ...paths]),
-		serve,
-		outputDir,
+		outputDirectory,
+		schemeDirectories: uniq([path.join(__dirname, 'lib', 'gulp'), ...schemeDirectories]),
+		serve: truthy(serve),
 	})
 	const schemes = map(buildScheme, Object.entries(descriptor))
 
@@ -125,9 +126,10 @@ function CreateGulpTasks(descriptor, {
 		default: build,
 	}
 
-	if (serve) {
+	if (truthy(serve)) {
 		const serveTask = Serve({
-			baseDir: outputDir,
+			...(is(Object, serve) ? serve : {}),
+			root: outputDirectory,
 		})
 		serveTask.displayName = 'serve:webserver'
 		return Object.assign({

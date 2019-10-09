@@ -20,4 +20,9 @@ module.exports = StaticSiteGenerator({
 		name: 'bar',
 		prefix: 'scripts',
 	},
+}, {
+	'serve': {
+		livereload: true,
+		fallback: join('404', 'index.html'),
+	},
 })
