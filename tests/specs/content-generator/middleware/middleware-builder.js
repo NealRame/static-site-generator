@@ -65,10 +65,12 @@ test('Middleware should call back once process with files', async t => {
 		config: {},
 	})
 	const files = []
+	const partials = []
+	const templates = []
 
-	await middleware(files)
+	await middleware({files, partials, templates})
 
-	t.true(process.calledOnceWith(files))
+	t.true(process.calledOnceWithExactly(files, partials, templates))
 })
 
 test('Middleware should return passed files', async t => {
