@@ -29,7 +29,7 @@ function SchemeLoader(schemeDirectories) {
 		([schemeName, path, config]) => [
 			schemeName,
 			require(path)(config),
-		]
+		],
 	)
 }
 
@@ -43,14 +43,14 @@ const checkScheme = ifElse(
 			clean: is(Function),
 			sources: either(
 				both(is(Array), all(is(String))),
-				is(String)
+				is(String),
 			),
 		}),
 	),
 	nth(1),
 	([path]) => {
 		throw new TypeError(`${path} is not valid`)
-	}
+	},
 )
 
 // wrap the given task within a try catch block
@@ -67,7 +67,7 @@ function wrapTask(task) {
 function SchemeBuilder({outputDirectory, schemeDirectories, serve}) {
 	const loadScheme = pipe(
 		SchemeLoader(schemeDirectories),
-		checkScheme
+		checkScheme,
 	)
 
 	return ([name, config]) => {
@@ -116,7 +116,7 @@ function CreateGulpTasks(descriptor, {
 	const clean = gulp.parallel(pluck('clean', schemes))
 	const watch = gulp.series(
 		gulp.parallel(pluck('build', schemes)),
-		gulp.parallel(pluck('watch', schemes))
+		gulp.parallel(pluck('watch', schemes)),
 	)
 
 	const gulpTasks = {
