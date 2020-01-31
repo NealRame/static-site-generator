@@ -21,8 +21,10 @@ module.exports = StaticSiteGenerator({
 		prefix: 'scripts',
 	},
 }, {
+	'outputDirectory': process.env.SITE_OUTPUT_BASE_DIR || 'build',
 	'serve': {
 		livereload: true,
 		fallback: join('404', 'index.html'),
 	},
+	'sourcemaps': process.env.SITE_ENV === 'development',
 })
