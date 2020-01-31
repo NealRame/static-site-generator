@@ -64,14 +64,19 @@ function wrapTask(task) {
 	}
 }
 
-function SchemeBuilder({outputDirectory, schemeDirectories, serve}) {
+function SchemeBuilder({
+	outputDirectory,
+	schemeDirectories,
+	serve,
+	sourcemaps,
+}) {
 	const loadScheme = pipe(
 		SchemeLoader(schemeDirectories),
 		checkScheme,
 	)
 
 	return ([name, config]) => {
-		const scheme = loadScheme([name, {...config, outputDirectory}])
+		const scheme = loadScheme([name, {...config, outputDirectory, sourcemaps}])
 
 		const clean = scheme.clean
 		const build = wrapTask(cb => {
@@ -104,11 +109,13 @@ function CreateGulpTasks(descriptor, {
 	outputDirectory = 'build',
 	schemeDirectories = [],
 	serve = true,
+	sourcemaps = true,
 } = {}) {
 	const buildScheme = SchemeBuilder({
 		outputDirectory,
 		schemeDirectories: uniq([path.join(__dirname, 'lib', 'gulp'), ...schemeDirectories]),
 		serve: truthy(serve),
+		sourcemaps,
 	})
 	const schemes = map(buildScheme, Object.entries(descriptor))
 
