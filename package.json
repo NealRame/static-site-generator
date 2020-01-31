@@ -1,6 +1,6 @@
 {
   "name": "nr-static-site-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate static sites with gulp!",
   "main": "index.js",
   "repository": "github:NealRame/static-site-generator",
