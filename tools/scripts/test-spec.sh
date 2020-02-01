@@ -1,5 +1,3 @@
-#! /bin/bash
-
-source "$PWD/tools/scripts/.env"
+#! /bin/sh
 
 NODE_ENV="development" ava
