@@ -3,9 +3,7 @@ node_js:
 - 13
 script: "$PWD/tools/scripts/test.sh"
 deploy:
+  edge: true
   provider: npm
   email: julien@graziano.fr
-  api_key:
-    secure: DdpdMmgFvP+odBw+yfYPNRiSjISdmle2pECWGTlnqV8ETLukZ5GFlmTOcZu5EFU/2j1hB9DdYOcjKar/Yc4SSbbyV2WJd+0nofYIVkuTBNQ0Cu5CdTQxvZKXxC7gACmkFv2ntwCkOs+yJ7Sim4QMhqglD+GfGITsjPOuJnD7rYb1/6VFbmLqFX4nNIFfi3AAspyj+uviaFE4euIT7gr77QUYAy+hNTXwcsa+1YKpbKvebd/b33Ys43zV0un7uzs9K4itpHWsxaWpnpoJKPkcQlm7W4/yLQdjA/CGVKVCPfEX1/lo1m1QkeRfaYW80X6MZk2AsP45I5jktoKbjFj3jPLhVBi+dlGsC78rVu0865bVyBpZBo1GqJT1OryxXf0lV/+FiWfkgywwkJBpNHNbwsU812fi8jgY4KNcGiYxRplapau9IOhyCq0SsNihZ7vphrkZUhLo1bFmoX5MLFCvQGCT7xzIHmMRVJIvffRLYUDI/Jje8Cds0sQSmFbp3NnbCEiWwOV9/TK4A7Cf2J4k9C2AGdQuE/o3nmX4fjy1fNgMb/HbI38mFZh7+cFAg+NLqGUMVedVaB+l6PENjn7uTIebrzlS7uAZTciulU3X8121a4rP201tPM0oLtlDqoBCmQgn9GNMpQng7LfHk5bfLYh/0HjomNJyGzIdm2DmjSM=
-  on:
-    repo: NealRame/static-site-generator
+  api_key: "$NPM_AUTH_TOKEN"
