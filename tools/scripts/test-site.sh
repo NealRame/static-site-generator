@@ -2,6 +2,7 @@
 
 set -e
 
+PATH=$PATH:"$PWD/node_modules/.bin"
 SITE_DIR=${SITE_DIR:-tests/site}
 
 cd "${SITE_DIR}"
