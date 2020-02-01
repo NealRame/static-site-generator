@@ -44,11 +44,11 @@ test('Middleware builder should throw when data is not correct', t => {
 	const state = State()
 	const build = _MiddlewareBuilder(state)
 
-	t.throws(() => build({}), Error)
-	t.throws(() => build({name: 'test'}), Error)
-	t.throws(() => build({name: 0}), Error)
-	t.throws(() => build({name: 0, builder: 2}), Error)
-	t.throws(() => build({name: 'test', builder: () => noop, config: 2}), Error)
+	t.throws(() => build({}), {instanceOf: Error})
+	t.throws(() => build({name: 'test'}), {instanceOf: Error})
+	t.throws(() => build({name: 0}), {instanceOf: Error})
+	t.throws(() => build({name: 0, builder: 2}), {instanceOf: Error})
+	t.throws(() => build({name: 'test', builder: () => noop, config: 2}), {instanceOf: Error})
 })
 
 test('Middleware should call back once process with files', async t => {

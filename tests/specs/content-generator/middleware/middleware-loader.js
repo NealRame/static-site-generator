@@ -32,6 +32,6 @@ test(`Loader should throw when module 'name' has not been found`, async t => {
 		const state = State({middlewaresDirectories: [dir]})
 		const load = _MiddlewareLoader(state)
 		const config = {foo: 'bar'}
-		t.throws(() => load({name, config}), Error)
+		t.throws(() => load({name, config}), {instanceOf: Error})
 	})
 })
