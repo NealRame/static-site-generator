@@ -1,8 +1,9 @@
 language: node_js
 node_js:
-  - 13
-script: $PWD/tools/scripts/test.sh
+- 13
+script: "$PWD/tools/scripts/test.sh"
 deploy:
   provider: npm
-  email: "julien@graziano.fr"
-  api_key: "$NPM_AUTH_TOKEN"
+  email: julien@graziano.fr
+  api_key:
+    secure: Y90MPj3hpPFeNFdD8WdFck3tidoEOQbRcnGKcpbu7O32vdeGnY3tgs/qlnSq2p4H7CxmecCnMQ+06atPN9nddKrPw38HezPopRaOikD4fLV6fPnLsmjotFmrvcdJT69Hb+q77d3i0MUZ0SecUOLlIj9NbylcAjkc/WQnVGevjfjA8DXv7s4hnkcTChGpnwqtLYU0e4RMm2I8R2EKMPI/8vY4G4MeUJ1b+iQSxQG/KleAcS3+wL5hkr2Hw28LW6xhwLjlhkLEIImnAuA3S4PnQ/9hcnPbRlsRnz8KQ+knY0mNG08mrwH9wjNhnH1mt/WkRcQGSWozE5lJcVvKMXhqxfQiNsBQlsX3D8KHYNile0xVolc7bZenUAep7/3etHCon6HkaQ9u1653QXfbvjYovvSamjXUc4N+w6ucmqgw3DA4afkDS5P2Wv1MQ1k6Hjlt9qz7yZYrmHiVhPz+SHNu6cwDdHAwGf+4bCNsRKcJqgGgwRCbLVaejzalEqvxnNIPwj1j/17GWabWKV5QtEm/9h5boPLAOvhpUw2sDVGSOXWorHjiMWxVNDXuGCleSaiXZG46SxQoiVpfrgC1+q642/UQUUqjFM7ZEOQfQs3Wczf+phdQ+6pkloWl5K5wyUcETsq7x8ApGg6NozApMs+lMOy7eQAxRLvg8E1s/0PTTtI=
