@@ -2,7 +2,6 @@ const test = require('ava')
 const {is} = require('ramda')
 
 const State = require('../helpers/state')
-const makeMiddlewareModule = require('../helpers/make-middleware-module')
 const {noop} = require('../../../../lib/utils/functional')
 const {MiddlewareFactory} = require('../../../../lib/content-generator/middleware')
 
