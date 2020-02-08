@@ -5,6 +5,9 @@ module.exports = StaticSiteGenerator({
 	'content': {
 		index: true,
 		middlewares: ['menu'],
+		middlewaresDirectories: [
+			join(__dirname, 'middlewares'),
+		],
 	},
 	'style': {
 		sourcesDir: join(__dirname, 'style'),

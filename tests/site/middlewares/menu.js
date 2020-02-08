@@ -1,5 +1,8 @@
 const {compose, filter, map, pathOr, prop, sort, where} = require('ramda')
-const {truthy} = require('../../utils/functional')
+
+function truthy(value) {
+	return !!value
+}
 
 function entryPriority(file) {
 	return pathOr(Infinity, [1, 'data', 'nav', 'priority'], file)
