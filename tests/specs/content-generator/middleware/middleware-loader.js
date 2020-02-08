@@ -30,5 +30,4 @@ test('Loader should throw when module \'name\' has not been found', t => {
 	const load = _MiddlewareLoader(state)
 	const config = {foo: 'bar'}
 	t.throws(() => load({name: 'middleware', config}), {instanceOf: Error})
-
 })
