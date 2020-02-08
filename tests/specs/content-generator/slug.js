@@ -1,6 +1,6 @@
 const test = require('ava')
 
-const slug = require('../../../lib/content-generator/slug')
+const slug = require('../../../lib/gulp/content/slug')
 
 test('pathToSlug', t => {
 	t.deepEqual(slug.pathToSlug(''), '/')
