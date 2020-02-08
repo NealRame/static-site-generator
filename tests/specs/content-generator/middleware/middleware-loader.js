@@ -3,7 +3,7 @@ const test = require('ava')
 const {identical, is, where} = require('ramda')
 
 const State = require('../helpers/state')
-const {_MiddlewareLoader} = require('../../../../lib/content-generator/middleware')
+const {_MiddlewareLoader} = require('../../../../lib/gulp/content/middleware')
 
 test('_MiddlewareLoader should be a function', t => {
 	t.true(is(Function, _MiddlewareLoader))

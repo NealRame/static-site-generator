@@ -3,7 +3,7 @@ const {is} = require('ramda')
 
 const State = require('../helpers/state')
 const {noop} = require('../../../../lib/utils/functional')
-const {MiddlewareFactory} = require('../../../../lib/content-generator/middleware')
+const {MiddlewareFactory} = require('../../../../lib/gulp/content/middleware')
 
 // test('MiddlewareFactory should be a function', t => {
 // 	t.true(is(Function, MiddlewareFactory))
