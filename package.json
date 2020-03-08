@@ -30,7 +30,6 @@
     "gulp-connect": "^5.7.0",
     "gulp-if": "^3.0.0",
     "gulp-sass": "^4.0.2",
-    "lunr": "^2.3.8",
     "marked": "^0.8.0",
     "multipipe": "^3.0.1",
     "pug": "^2.0.3",
