@@ -1,0 +1,8 @@
+mixin breadcrumbs(slug)
+	if /^\/?$/.test(slug)
+		a(href=slug) home
+	else
+		- const parts = slug.split('/')
+		+breadcrumbs(parts.slice(0, parts.length - 1).join('/'))
+		| &nbsp;
+		a(href=slug) #{parts[parts.length - 1]}

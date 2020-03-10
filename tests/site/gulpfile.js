@@ -3,7 +3,9 @@ const {join} = require('path')
 
 module.exports = StaticSiteGenerator({
 	'content': {
-		excludes: [/ignore(?:\/.*)?/],
+		excludes: [
+			'ignore/**/*',
+		],
 		index: true,
 		middlewares: ['menu'],
 		middlewaresDirectories: [
