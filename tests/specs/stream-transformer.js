@@ -10,7 +10,9 @@ test('Transformer should be a function', t => {
 })
 
 test('Transformer should create a transform stream', t => {
-	t.true(isStream.transform(Transformer({handle: identity})))
+	const transformStream = Transformer({handle: identity})
+	t.true(isStream.duplex(transformStream)
+		&& (typeof transformStream._transform === 'function'))
 })
 
 test('Transformer should create a transform stream in object mode', t => {
